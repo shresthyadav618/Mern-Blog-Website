@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Loader from "../Loader"
 export default function blog(props){
 
-  const BASE_URL = 'https://blog-website-bu2i.onrender.com/';
+  const BASE_URL = 'https://blog-website-bu2i.onrender.com';
 
 return(
     <>

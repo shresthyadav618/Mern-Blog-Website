@@ -8,7 +8,7 @@ import Blogs from "./components/blog";
 import PreLoader from './Loader';
 
 function App() {
-const BASE_URL = `https://blog-website-bu2i.onrender.com/`;
+const BASE_URL = `https://blog-website-bu2i.onrender.com`;
 const [loader,setLoader] = useState(true);
 
   const auth  = getAuth();

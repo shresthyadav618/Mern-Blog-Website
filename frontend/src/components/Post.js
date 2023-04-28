@@ -9,7 +9,7 @@ import {app} from "../firebase/firestore"
 import { useNavigate } from "react-router-dom";
 export default function usePost(){
 
-    const BASE_URL = 'https://blog-website-bu2i.onrender.com/';
+    const BASE_URL = 'https://blog-website-bu2i.onrender.com';
     const Navigate = useNavigate();
    const auth = getAuth(app);
 //    console.log(auth.currentUser.displayName)

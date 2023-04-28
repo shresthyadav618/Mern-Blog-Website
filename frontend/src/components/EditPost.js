@@ -13,7 +13,7 @@ export default function useEditPost(){
 
     const Navigate = useNavigate();
 const {id} = useParams();
-const BASE_URL = 'https://blog-website-bu2i.onrender.com/';
+const BASE_URL = 'https://blog-website-bu2i.onrender.com';
 const [blog,changeBlog] = useState(null);
 useEffect(()=>{
 

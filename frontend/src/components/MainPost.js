@@ -18,7 +18,7 @@ if(auth.currentUser)
     user='Manu Shresth';
  };
 
- const BASE_URL = 'https://blog-website-bu2i.onrender.com/';
+ const BASE_URL = 'https://blog-website-bu2i.onrender.com';
 const {id} = useParams();
 console.log(id);
 const [blog,changeBlog] = useState(null);

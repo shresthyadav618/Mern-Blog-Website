@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 export default function useRegister(){
 const Navigate = useNavigate();
+const BASE_URL = 'https://blog-website-bu2i.onrender.com/';
 const [data,changeData] = useState({
     email:"",
     username:"",
@@ -28,7 +29,7 @@ e.preventDefault();
             console.log('user created');
 
             console.log(data);
- fetch('http://localhost:4000/user',{
+ fetch(`${BASE_URL}/user`,{
     method:'POST',
     headers:{
         'Content-Type':'application/json'

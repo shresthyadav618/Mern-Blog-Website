@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Loader from "../Loader"
 export default function blog(props){
 
-
+  const BASE_URL = 'https://blog-website-bu2i.onrender.com/';
 
 return(
     <>
@@ -12,7 +12,7 @@ return(
     <Link to={'/blogs/'+props.id} className="trash">
     <div className='blog__content'>
   <div className='blog__image'>
-  <img src={'http://localhost:4000/'+props.img}></img>
+  <img src={`${BASE_URL}/`+props.img}></img>
   </div>
  <div className='blog__text'>
  <h1>{props.title} </h1>

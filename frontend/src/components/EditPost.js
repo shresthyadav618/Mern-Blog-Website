@@ -16,10 +16,10 @@ const {id} = useParams();
    
 const [blog,changeBlog] = useState(null);
 useEffect(()=>{
-
+const BASE_URL = 'https://blog-website-bu2i.onrender.com/';
     async function getBlog(){
     
-        const resposne = await fetch(`http://localhost:4000/blogs/`+id);
+        const resposne = await fetch(`${BASE_URL}/blogs/`+id);
         if(resposne.ok){
             const res = await resposne.json();
             changeData({
@@ -80,7 +80,7 @@ function handleSubmit(e){
           const base64String = reader.result.split(',')[1];
         formData.append('buffer',base64String);
       
-          fetch('http://localhost:4000/edit/'+id,{
+          fetch(`${BASE_URL}/edit/`+id,{
             method:'PUT',
             body: formData,
         })

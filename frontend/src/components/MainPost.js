@@ -16,7 +16,9 @@ if(auth.currentUser)
  user = auth.currentUser.uid;
  else{
     user='Manu Shresth';
- }
+ };
+
+ const BASE_URL = 'https://blog-website-bu2i.onrender.com/';
 const {id} = useParams();
 console.log(id);
 const [blog,changeBlog] = useState(null);
@@ -24,7 +26,7 @@ useEffect(()=>{
 
 async function getBlog(){
 
-    const resposne = await fetch(`http://localhost:4000/blogs/`+id);
+    const resposne = await fetch(`${BASE_URL}/blogs/`+id);
     if(resposne.ok){
         const res = await resposne.json();
         console.log({...res});
@@ -60,7 +62,7 @@ if(!blog){
 </div>}
 
             <div className="main__image">
-                <img src={`http://localhost:4000/`+blog.path}></img>
+                <img src={`${BASE_URL}/`+blog.path}></img>
             </div>
 
 <div className="main__content">

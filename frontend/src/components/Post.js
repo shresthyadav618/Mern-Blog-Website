@@ -9,6 +9,7 @@ import {app} from "../firebase/firestore"
 import { useNavigate } from "react-router-dom";
 export default function usePost(){
 
+    const BASE_URL = 'https://blog-website-bu2i.onrender.com/';
     const Navigate = useNavigate();
    const auth = getAuth(app);
 //    console.log(auth.currentUser.displayName)
@@ -48,7 +49,7 @@ function handleSubmit(e){
       const base64String = reader.result.split(',')[1];
     formData.append('buffer',base64String);
   
-      fetch('http://localhost:4000/new-post',{
+      fetch(`${BASE_URL}/new-post`,{
         method:'POST',
         body: formData,
     }).then((res)=>{

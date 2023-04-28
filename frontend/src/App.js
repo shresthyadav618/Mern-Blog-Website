@@ -8,7 +8,7 @@ import Blogs from "./components/blog";
 import PreLoader from './Loader';
 
 function App() {
-
+const BASE_URL = `https://blog-website-bu2i.onrender.com/`;
 const [loader,setLoader] = useState(true);
 
   const auth  = getAuth();
@@ -20,7 +20,7 @@ const [loader,setLoader] = useState(true);
 
   async function getData(){
   
-      const resposne = await fetch('http://localhost:4000/blogs');
+      const resposne = await fetch(`${BASE_URL}/blogs`);
       if(resposne.ok){
           const res = await resposne.json();
           changeBlogs(res);

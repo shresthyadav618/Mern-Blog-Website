@@ -20,7 +20,7 @@ const [loader,setLoader] = useState(true);
 
   async function getData(){
   
-      const resposne = await fetch({BASE_URL+'/blogs');
+      const resposne = await fetch(BASE_URL+'/blogs');
       if(resposne.ok){
           const res = await resposne.json();
           changeBlogs(res);

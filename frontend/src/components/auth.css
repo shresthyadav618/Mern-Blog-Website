@@ -39,3 +39,8 @@ margin: auto;
 .input__form > button:hover{
     background-color: gray;
 }
+@media screen and (max-width:800px){
+    .input__form{
+        width: 100%;
+    }
+}

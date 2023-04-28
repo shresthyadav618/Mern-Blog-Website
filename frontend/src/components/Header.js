@@ -38,7 +38,14 @@ return (
     <nav>
         {!user && <>  <Link to='/login'>Login</Link>
       <Link to='/register'>Register</Link></>}
-    
+    {
+        !user && <div className="hamburger">
+<div className="line"></div>
+<div className="line"></div>
+<div className="line"></div>
+            
+        </div>
+    }
 {user && <>
 <Link to="/new-post">Create new post</Link>
 

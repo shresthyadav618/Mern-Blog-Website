@@ -4,6 +4,9 @@
    justify-content: center;
    align-items: center; 
 }
+.main__head > h1{
+    text-align: center;
+}
 .main__image{
     display: flex;
     align-items: center;
@@ -13,6 +16,7 @@
 .main__image > img{
     max-height: 300px;
     border-radius: 10px;
+    width: 60%;
     align-items: center;
     object-fit: cover;
     object-position: center center;

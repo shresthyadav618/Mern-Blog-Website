@@ -94,7 +94,7 @@ else{
     console.log('inside the null buffer condition , which we dont want because we selected file (in case if we have)')
     formData.append('buffer',null);
   
-    fetch('http://localhost:4000/edit/'+id,{
+    fetch(`${BASE_URL}/edit/`+id,{
       method:'PUT',
       body: formData,
   })

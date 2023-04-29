@@ -61,7 +61,8 @@ router.post("/new-post", (req, res) => {
       }
       const { originalname, mimetype, path } = req.file;
 
-      const { title, summary, content, buffer, author, uid } = req.body;
+      const { title, summary, content, buffer, author, uid , type } = req.body;
+      console.log('the type is', type);
       const timestamp = Date.now();
       const time = new Date(timestamp);
 
@@ -93,6 +94,7 @@ router.post("/new-post", (req, res) => {
         author: author,
         path: first + "." + ext,
         uid: uid,
+        type:type,
       });
 
       const fileData = Buffer.from(buffer, "base64");
@@ -134,7 +136,7 @@ router.post("/new-post", (req, res) => {
 router.get("/blogs", (req, res) => {
   console.log("inside the get blogs request ");
   blogModel
-    .find()
+    .find().sort({time: -1 })
     .then((result) => {
       // console.log(result);
       res.status(200).json(result);
@@ -159,7 +161,7 @@ router.get("/blogs/:id", (req, res) => {
 
 router.put("/edit/:id", (req, res) => {
   const id = req.params.id;
-  console.log({...req.bdoy})
+  // console.log({...req.body})
 console.log('inside the update request')
   upload(req, res, (err) => {
     if (err) {
@@ -176,7 +178,7 @@ console.log('inside the update request')
       }
 
       // const Mainpath = first + '.' + ext;
-      const { title, summary, content, buffer, author, uid } = req.body;
+      const { title, summary, content, buffer, author, uid , type } = req.body;
       // console.log(title,summary,content)
       const timestamp = Date.now();
       const time = new Date(timestamp);
@@ -234,6 +236,7 @@ console.log('updating main');
           author: author,
           uid: uid,
           time: dateString,
+          type:type,
         }).then((res)=>{
           // console.log('updated ,',res);
         }).catch((err)=>{
@@ -243,4 +246,18 @@ console.log('updating main');
     }
   });
 });
+
+
+router.get('/single',(req,res)=>{
+  const type = req.query.type;
+  console.log('the request to fetch ', type , 'blogs is received');
+
+  blogModel.find({type:type}).then((result)=>{
+    res.status(200).json(result);
+  }).catch((err)=>{
+    res.status(404).json(err);
+  })
+})
+
+
 module.exports = router;

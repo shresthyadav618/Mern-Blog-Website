@@ -12,6 +12,7 @@ const blogSchema = mongoose.Schema({
     time: String,
     path:String,
     uid:String,
+    type:String,
 });
 
 const blogModel = mongoose.model('blogs',blogSchema);

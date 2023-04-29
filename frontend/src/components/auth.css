@@ -35,6 +35,7 @@ margin: auto;
     font-weight: bolder;
     font-size: x-large;
     color: white;
+    cursor: pointer;
 }
 .input__form > button:hover{
     background-color: gray;

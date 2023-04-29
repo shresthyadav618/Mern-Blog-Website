@@ -7,19 +7,31 @@ import Register from "./components/register"
 import Post from "./components/Post"
 import MainPost from "./components/MainPost";
 import EditPost from "./components/EditPost"
+import NewApp from "./components/NewApp"
 import {BrowserRouter as Router , Routes, Route } from "react-router-dom"
-
+import { MyProvider } from './components/Context';
+import Header from "./components/Header"
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
       <Routes>
-        <Route path='/' element={<App/>}></Route>
-        <Route path='/login' element={<Login/>}></Route>
-        <Route path='/register' element={<Register/>}></Route>
-        <Route path='/new-post' element={<Post/>}></Route>
-        <Route path='/blogs/:id' element={<MainPost/>}></Route>
-        <Route path='/edit/:id' element={<EditPost/>}></Route>
+       
+        <Route path='/' element={
+          <MyProvider>
+            <Header/>
+             <App/>
+          </MyProvider>
+       
+        }></Route>
+       
+        
+        <Route path='/login' element={<MyProvider><Login/></MyProvider>}></Route>
+        <Route path='/register' element={<MyProvider><Register/></MyProvider>}></Route>
+        <Route path='/new-post' element={<MyProvider><Post/></MyProvider>}></Route>
+        <Route path='/blogs/:id' element={<MyProvider><MainPost/></MyProvider>}></Route>
+        <Route path='/edit/:id' element={<MyProvider><EditPost/></MyProvider>}></Route>
+        <Route path='/single/:id' element={<MyProvider><NewApp/></MyProvider>}></Route>
       </Routes>
     
     </Router>

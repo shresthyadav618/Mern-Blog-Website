@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import "./MainPost.css";
+import "../App.css"
 import { getAuth } from "firebase/auth";
 import {app} from "../firebase/firestore";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -19,9 +20,11 @@ if(auth.currentUser)
  };
 
  const BASE_URL = 'https://blog-website-bu2i.onrender.com';
+// const BASE_URL = `http://localhost:4000`;
 const {id} = useParams();
 console.log(id);
 const [blog,changeBlog] = useState(null);
+const [reload,changeReload] = useState(false);
 useEffect(()=>{
 
 async function getBlog(){
@@ -40,13 +43,21 @@ async function getBlog(){
 
 getBlog();
 
-},[]);
+},[reload]);
 if(!blog){
     return <Loader/>;
 }else{
     return (
         <>
         {loader && <Loader/>}
+        <div className="parent__refresh__btn">
+  <button className='refresh__btn' onClick={()=>{
+    changeReload((prev)=>{
+        return !prev;
+    })
+    setLoader(true);
+  }}>Refresh</button>
+  </div>
         <div className="main__post">
 
 <div className="main__head">

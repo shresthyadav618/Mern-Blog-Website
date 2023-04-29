@@ -5,6 +5,24 @@
     font-weight: 700;
     margin: auto;
 }
+.post__select{
+    display: flex;
+    font-size: large;
+    width: 90%;
+    padding: 10px;
+    border: 1px solid gray;
+    margin: auto;
+    gap: 20px;
+    color: gray;
+}
+.post__select > label {
+    font-size: large;
+    font-weight: 900;
+}
+.post__select > select{
+    width: 200px;
+    font-size: large;
+}
 .quill{
     width: 92%;
     padding: 5px;

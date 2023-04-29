@@ -1,19 +1,21 @@
 
 import './App.css';
-import { useState,useEffect, useDeferredValue } from 'react';
+import { useState,useEffect, useContext } from 'react';
 import Blog from "./assets/blog.webp";
 import { getAuth } from "firebase/auth";
 import Header from "./components/Header"
 import Blogs from "./components/blog";
 import PreLoader from './Loader';
-
+import { MyContext } from './components/Context';
 function App() {
 const BASE_URL = `https://blog-website-bu2i.onrender.com`;
+// const BASE_URL = `http://localhost:4000`;
+const Context = useContext(MyContext);
 const [loader,setLoader] = useState(true);
 
   const auth  = getAuth();
-  const [allBlogs,changeBlogs] = useState(null); 
-
+  // const [allBlogs,changeBlogs] = useState(null); 
+const {allBlogs,changeBlogs} = useContext(MyContext);
 
 
   useEffect(()=>{
@@ -40,7 +42,7 @@ const [loader,setLoader] = useState(true);
    
     <div className='main__container'>
    
-<Header/>
+{/* <Header/> */}
 {loader && <PreLoader/>}
 <div className='display__container'>
 

@@ -14,6 +14,7 @@ export default function useEditPost(){
     const Navigate = useNavigate();
 const {id} = useParams();
 const BASE_URL = 'https://blog-website-bu2i.onrender.com';
+// const BASE_URL = `http://localhost:4000`;
 const [blog,changeBlog] = useState(null);
 useEffect(()=>{
 
@@ -59,7 +60,7 @@ function handleSubmit(e){
     formData.append('summary', data.summary);
     formData.append('content', data.content);
     formData.append('file', data.file);
-    
+    // formData.append('type',data.type);
     let x ='';
     let y='';
 
@@ -126,6 +127,23 @@ if(!blog){
             return {...prev,summary:e.target.value}
         })
     }} value={data.summary} ></input>
+
+
+<div className="post__select">
+   <label for="my-select">Select Type:</label>
+<select id="my-select" name="type" onChange={(e)=>{
+    changeData((prev)=>{
+        return {...prev,type:e.target.value}
+    })
+}}>
+    <option value="Choose:">Choose:</option>
+  <option value="technology">Technology</option>
+  <option value="education">Education</option>
+  <option value="politics">Politics</option>
+  <option value="healthcare">Healthcare</option>
+</select>
+   </div>
+
     <input type="file" files={blog.file} className="ip" name="file" onChange={(e)=>{
         changeData((prev)=>{
             return {...prev,file:e.target.files[0]}

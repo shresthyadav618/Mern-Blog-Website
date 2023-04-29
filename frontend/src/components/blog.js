@@ -5,11 +5,12 @@ import Loader from "../Loader"
 export default function blog(props){
 
   const BASE_URL = 'https://blog-website-bu2i.onrender.com';
+  // const BASE_URL = `http://localhost:4000`;
 
 return(
     <>
     {/* <Loader/> */}
-    <Link to={'/blogs/'+props.id} className="trash">
+    <div  className="trash">
     <div className='blog__content'>
   <div className='blog__image'>
   <img src={`${BASE_URL}/`+props.img}></img>
@@ -20,12 +21,13 @@ return(
   <span dangerouslySetInnerHTML={{__html: props.summary}} >
 
   </span>
+  <Link to={'/blogs/'+props.id}><button className="blog__button">Read More</button></Link>
 
  </div>
 
 
 </div>
-</Link>
+</div>
 </>
 )
 

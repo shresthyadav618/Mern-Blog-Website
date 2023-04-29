@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 export default function useRegister(){
 const Navigate = useNavigate();
 const BASE_URL = 'https://blog-website-bu2i.onrender.com';
+// const BASE_URL = `http://localhost:4000`;
 const [data,changeData] = useState({
     email:"",
     username:"",

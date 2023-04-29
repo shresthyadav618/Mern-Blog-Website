@@ -75,7 +75,7 @@ function handleSubmit(e){
     formData.append('author',x);
     formData.append('uid',y);
     const reader = new FileReader();
-    // if(typeof data.file !== 'object' || data.file === null || !data.file instanceof Blob){
+    if(typeof data.file !== 'object' || data.file === null || !data.file instanceof Blob){
         reader.readAsDataURL(data.file);
         reader.onloadend = function() {
           const base64String = reader.result.split(',')[1];
@@ -89,17 +89,17 @@ function handleSubmit(e){
     
     
         }
-    // }
-// else{
-//     console.log('inside the null buffer condition , which we dont want because we selected file (in case if we have)')
-//     formData.append('buffer',null);
+    }
+else{
+    console.log('inside the null buffer condition , which we dont want because we selected file (in case if we have)')
+    formData.append('buffer',null);
   
-//     fetch('http://localhost:4000/edit/'+id,{
-//       method:'PUT',
-//       body: formData,
-//   })
-//   Navigate(`/blogs/`+id);
-// }
+    fetch('http://localhost:4000/edit/'+id,{
+      method:'PUT',
+      body: formData,
+  })
+  Navigate(`/blogs/`+id);
+}
 
     
 

@@ -195,7 +195,10 @@ color: white;
     max-width: 200px;
   }
 }
-
+.req__span{
+  max-height: 120px;
+  overflow: hidden;
+}
 @media screen and (max-width: 698px){
   .blog__text > h1{
     width: 100%;

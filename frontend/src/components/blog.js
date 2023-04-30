@@ -18,7 +18,7 @@ return(
  <div className='blog__text'>
  <h1>{props.title} </h1>
  <span className='blog__info'> <a className='author'>{props.author}</a> <span>{props.time}</span> </span>
-  <span dangerouslySetInnerHTML={{__html: props.summary}} >
+  <span dangerouslySetInnerHTML={{__html: props.summary}} className="req__span">
 
   </span>
   <Link to={'/blogs/'+props.id}><button className="blog__button">Read More</button></Link>

@@ -13,7 +13,9 @@ return(
     <div  className="trash">
     <div className='blog__content'>
   <div className='blog__image'>
-  <img src={`${BASE_URL}/`+props.img}></img>
+  <img src={`${BASE_URL}/`+props.img} onError={(e) => {
+    e.target.src = Img
+  }}></img>
   </div>
  <div className='blog__text'>
  <h1>{props.title} </h1>

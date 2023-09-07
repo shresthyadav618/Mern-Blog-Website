@@ -1,0 +1,84 @@
+.header__first .getspace{
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+}
+.getspace > a{
+    color: inherit;
+}
+
+.header__first{
+    display: flex;
+    
+    justify-content: space-around;
+    padding: 20px;
+    border-bottom: 1px solid black;
+}
+.header__first > i{
+    font-size: small;
+    
+}
+.crp{
+    cursor: pointer;
+}
+.getflex{
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+.header__burger{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__burger > div{
+width: 15px;
+height: 3px;
+background-color: black;
+}
+
+.header__first__right{
+    display: flex;
+    gap: 40px;
+    cursor: pointer;
+}
+.header__content{
+    width: 100%;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.header__content > div{
+    display: flex;
+    gap: 20px;
+    margin: auto;
+    padding: 20px;
+    font-size: 15px;
+}
+.header__content > div >a{
+    color: inherit;
+    text-decoration: none;
+    
+}
+.header__container{
+    border-bottom: 1px solid black;
+}
+.getclrred{color: red !important; }
+
+
+
+@media screen and (max-width:788px){
+    .header__container{
+        display: none;
+    }
+    .getspace{
+        display: none!important;
+    }
+    .header__first{
+        justify-content: space-between;
+    }
+}

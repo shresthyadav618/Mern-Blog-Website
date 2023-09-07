@@ -2,6 +2,7 @@
 import "../App.css"
 import { Link } from "react-router-dom";
 import Loader from "../Loader"
+import Img from "../assets/eb.jpeg";
 export default function blog(props){
 
   const BASE_URL = 'https://blog-website-bu2i.onrender.com';

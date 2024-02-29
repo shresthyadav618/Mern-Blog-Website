@@ -1,13 +1,12 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"
-import "./MainPost.css";
-import "../App.css"
+import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { getAuth } from "firebase/auth";
-import {app} from "../firebase/firestore";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faPenToSquare} from '@fortawesome/free-solid-svg-icons'
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import "../App.css";
 import Loader from "../Loader";
+import { app } from "../firebase/firestore";
+import "./MainPost.css";
 export default function (){
 
     const [loader,setLoader] = useState(true);

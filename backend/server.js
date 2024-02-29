@@ -8,6 +8,10 @@ const port = process.env.PORT;
 const app = express();
 
 app.use(cors());
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    next();
+  });
 app.use(express.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(bodyParser.raw({ type: 'image/*' }));
